@@ -4,12 +4,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: bazarr-config-v1
   namespace: media
-  labels:
-    kasten.io/backup-volume: "enabled"
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
-  storageClassName: rook-ceph-block
+  storageClassName: tank-sc
