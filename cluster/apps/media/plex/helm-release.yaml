@@ -32,7 +32,7 @@ spec:
           hajimari.io/icon: "text"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
-          - host: plex.${SECRET_DOMAIN}"
+          - host: "plex.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
