@@ -51,3 +51,7 @@ spec:
     persistence:
         enabled: true
         existingClaim: nextcloud-config-v1
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
