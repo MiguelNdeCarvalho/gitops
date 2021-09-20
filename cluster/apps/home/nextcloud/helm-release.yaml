@@ -23,23 +23,17 @@ spec:
     env:
       TZ: "Europe/Lisbon"
     ingress:
-      main:
-        enabled: true
-        ingressClassName: "traefik"
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "text"
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        hosts:
-          - host: "nextcloud.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "nextcloud.${SECRET_DOMAIN}"
-            secretName: "nextcloud-${SECRET_DOMAIN//./-}-tls"
+      enabled: true
+      ClassName: "traefik"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "text"
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+      tls:
+        - hosts:
+            - "nextcloud.${SECRET_DOMAIN}"
+          secretName: "nextcloud-${SECRET_DOMAIN//./-}-tls"
     nextcloud:
       host: nextcloud.mike-server.ovh
       username: admin
