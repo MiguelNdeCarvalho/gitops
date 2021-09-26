@@ -4,5 +4,6 @@ resources:
   - home
   - kube-system
   - media
+  - monitoring
   - networking
   - system-upgrade
